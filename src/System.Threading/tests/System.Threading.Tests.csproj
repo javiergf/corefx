@@ -15,14 +15,14 @@
     <Compile Include="EtwTests.cs" />
     <Compile Include="EventWaitHandleTests.cs" />
     <Compile Include="InterlockedTests.cs" />
-    <Compile Include="InterlockedTests.netcoreapp.cs" Condition="'$(TargetGroup)' != 'netstandard'" />
+    <Compile Include="InterlockedTests.netcoreapp.cs" Condition="'$(TargetsNetStandard)' != 'true'" />
     <Compile Include="HostExecutionContextTests.cs" />
     <Compile Include="HostExecutionContextManagerTests.cs" />
     <Compile Include="ManualResetEventTests.cs" />
     <Compile Include="ManualResetEventSlimCancellationTests.cs" />
     <Compile Include="ManualResetEventSlimTests.cs" />
     <Compile Include="MonitorTests.cs" />
-    <Compile Include="MonitorTests.netcoreapp.cs" Condition="'$(TargetGroup)' != 'netstandard'" />
+    <Compile Include="MonitorTests.netcoreapp.cs" Condition="'$(TargetsNetStandard)' != 'true'" />
     <Compile Include="MutexTests.cs" />
     <Compile Include="SemaphoreSlimCancellationTests.cs" />
     <Compile Include="SemaphoreSlimTests.cs" />
@@ -31,7 +31,7 @@
     <Compile Include="ReaderWriterLockTests.cs" />
     <Compile Include="ReaderWriterLockSlimTests.cs" />
     <Compile Include="SpinWaitTests.cs" />
-    <Compile Include="SpinWaitTests.netcoreapp.cs" Condition="'$(TargetGroup)' != 'netstandard'" />
+    <Compile Include="SpinWaitTests.netcoreapp.cs" Condition="'$(TargetsNetStandard)' != 'true'" />
     <Compile Include="ThreadLocalTests.cs" />
     <Compile Include="XunitAssemblyAttributes.cs" />
     <Compile Include="ExecutionContextTests.cs" />

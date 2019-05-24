@@ -7,7 +7,7 @@
     <AssemblyVersion>9.9.9.9</AssemblyVersion>
     <Configurations>netcoreapp-Debug;netcoreapp-Release;netfx-Debug;netfx-Release;netstandard-Debug;netstandard-Release</Configurations>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'netstandard'">
+  <ItemGroup Condition="'$(TargetsNetStandard)' != 'true'">
     <Compile Include="Drawing\ColorConverterTests.cs" />
     <Compile Include="Drawing\PointConverterTests.cs" />
     <Compile Include="Drawing\RectangleConverterTests.cs" />
@@ -123,13 +123,13 @@
     <Compile Include="TypeConverterTestBase.cs" />
     <Compile Include="TypeDescriptionProviderAttributeTests.cs" />
     <Compile Include="TypeDescriptorTests.cs" />
-    <Compile Include="TypeDescriptorTests.netcoreapp.cs" Condition="'$(TargetGroup)' == 'netcoreapp'" />
+    <Compile Include="TypeDescriptorTests.netcoreapp.cs" Condition="'$(TargetsNetCoreApp)' == 'true'" />
     <Compile Include="TypeListConverterTests.cs" />
     <Compile Include="UInt16ConverterTests.cs" />
     <Compile Include="UInt32ConverterTests.cs" />
     <Compile Include="UInt64ConverterTests.cs" />
     <Compile Include="UriTypeConverterTests.cs" />
-    <Compile Include="VersionConverterTests.cs" Condition="'$(TargetGroup)' == 'netcoreapp'" />
+    <Compile Include="VersionConverterTests.cs" Condition="'$(TargetsNetCoreApp)' == 'true'" />
     <Compile Include="Drawing\StringTypeConverterTestBase.cs" />
     <Compile Include="TimerTests.cs" />
     <Compile Include="ContainerTests.cs" />

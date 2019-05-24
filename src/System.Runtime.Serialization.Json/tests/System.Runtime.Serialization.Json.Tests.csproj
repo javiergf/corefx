@@ -3,7 +3,7 @@
     <ProjectGuid>{173F6978-B961-4D1C-84E4-06468772D019}</ProjectGuid>
     <Configurations>netstandard-Debug;netstandard-Release;uapaot-Debug;uapaot-Release</Configurations>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'uapaot'">
+  <ItemGroup Condition="'$(TargetsUap)' != 'true' or '$(TargetsAot)' != 'true'">
     <Compile Include="$(TestSourceFolder)DataContractJsonSerializer.CoreCLR.cs" />
     <Compile Include="$(TestSourceFolder)..\..\System.Runtime.Serialization.Xml\tests\SerializationTypes.CoreCLR.cs" />
   </ItemGroup>

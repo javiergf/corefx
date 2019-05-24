@@ -46,7 +46,7 @@
       <LogicalName>ResourceTextFile.txt</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'netfx' And '$(TargetGroup)' != 'netstandard'">
+  <ItemGroup Condition="'$(TargetsNetStandard)' != 'true'">
     <Compile Include="AssemblyTests.netcoreapp.cs" />
     <Compile Include="MemberInfoTests.netcoreapp.cs" />
     <Compile Include="TypeInfoTests.netcoreapp.cs" />

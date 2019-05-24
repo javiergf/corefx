@@ -21,7 +21,7 @@
     <Compile Include="System\MarshalByRefObjectTest.cs" />
     <Compile Include="TestHelpers.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)'=='netcoreapp'">
+  <ItemGroup Condition="'$(TargetsNetCoreApp)' == 'true'">
     <Compile Include="System\AppDomainTests.netcoreapp.cs" />
     <Compile Include="System\Random.netcoreapp.cs" />
     <Compile Include="System\IO\Path.IsPathFullyQualified.netcoreapp.cs" />
@@ -33,7 +33,7 @@
     <Compile Include="System\Runtime\ProfileOptimization.netcoreapp.cs" />
     <Compile Include="System\Runtime\CompilerServices\SwitchExpressionExceptionTests.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)'!='netstandard'">
+  <ItemGroup Condition="'$(TargetsNetStandard)' != 'true'">
     <Compile Include="System\BitConverterSpan.cs" />
     <Compile Include="System\BitConverter.netcoreapp.cs" />
     <Compile Include="System\Convert.netcoreapp.cs" />

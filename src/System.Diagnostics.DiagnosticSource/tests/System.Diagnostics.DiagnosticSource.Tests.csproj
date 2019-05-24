@@ -4,16 +4,16 @@
     <IncludeRemoteExecutor>true</IncludeRemoteExecutor>
     <Configurations>netfx-Windows_NT-Debug;netfx-Windows_NT-Release;netstandard-Debug;netstandard-Release</Configurations>
   </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetGroup)' != 'netfx'">
+  <ItemGroup Condition=" '$(TargetsNetFx)' != 'true'">
     <Compile Include="DiagnosticSourceEventSourceBridgeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DiagnosticSourceTests.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetGroup)' != 'netstandard1.1'">
+  <ItemGroup Condition=" '$(TargetFramework)' != 'netstandard1.1'">
     <Compile Include="ActivityTests.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetGroup)' == 'netfx'">
+  <ItemGroup Condition=" '$(TargetsNetFx)' == 'true'">
     <Compile Include="HttpHandlerDiagnosticListenerTests.cs" />
     <Compile Include="ActivityDateTimeTests.cs" />
     <Compile Include="$(CommonTestPath)\System\Net\Configuration.cs">

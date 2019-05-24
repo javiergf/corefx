@@ -10,7 +10,7 @@
     <Compile Include="DllImport.cs" />
     <Compile Include="ThreadPoolBoundHandle_PreAllocatedOverlappedTests.cs" />
     <Compile Include="ThreadPoolBoundHandle_IntegrationTests.cs" />
-    <Compile Include="ThreadPoolBoundHandle_IntegrationTests.netcoreapp.cs" Condition="'$(TargetGroup)' != 'netstandard'" />
+    <Compile Include="ThreadPoolBoundHandle_IntegrationTests.netcoreapp.cs" Condition="'$(TargetsNetStandard)' != 'true'" />
     <Compile Include="ThreadPoolBoundHandle_Helpers.cs" />
     <Compile Include="AsyncResult.cs" />
     <Compile Include="Win32Handle.cs" />

@@ -6,7 +6,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ProjectGuid>{4B4AA59B-89F9-4A34-B3C3-C97EF531EE00}</ProjectGuid>
-    <IsInterpreting Condition="'$(TargetGroup)' == 'uapaot'">true</IsInterpreting>
+    <IsInterpreting Condition="'$(TargetsUap)' == 'true' and '$(TargetsAot)' == 'true'">true</IsInterpreting>
     <DefineConstants Condition=" '$(IsInterpreting)' != 'true' ">$(DefineConstants);FEATURE_COMPILE</DefineConstants>
     <DefineConstants Condition=" '$(FeatureInterpret)' == 'true' ">$(DefineConstants);FEATURE_INTERPRET</DefineConstants>
     <IncludeDefaultReferences>false</IncludeDefaultReferences>
@@ -35,7 +35,7 @@
     <ReferenceFromRuntime Include="System.IO.FileSystem" />
     <ReferenceFromRuntime Include="System.Runtime.InteropServices.RuntimeInformation" />
     <ReferenceFromRuntime Include="System.Runtime.InteropServices" />
-    <ReferenceFromRuntime Include="System.Private.Interop" Condition="'$(TargetGroup)' == 'uapaot'" />
+    <ReferenceFromRuntime Include="System.Private.Interop" Condition="'$(TargetsUap)' == 'true' and '$(TargetsAot)' == 'true'" />
     <ReferenceFromRuntime Include="netstandard" />
   </ItemGroup>
   <ItemGroup>
@@ -270,7 +270,7 @@
   </ItemGroup>
   <!-- DebuggerAttribute tests require internal framework Reflection and will not work on AoT platforms.
        The proper way to test these is via the debugger expression evaluator, not Reflection. -->
-  <ItemGroup Condition="'$(TargetGroup)'!='uapaot'">
+  <ItemGroup Condition="'$(TargetsUap)' != 'true' or '$(TargetsAot)' != 'true'">
     <Compile Include="DebugViewTests.cs" />
     <Compile Include="DebuggerTypeProxy\ExpressionDebuggerTypeProxyTests.cs" />
     <Compile Include="Dynamic\BindingRestrictionsProxyTests.cs" />

@@ -5,7 +5,7 @@
     <Configurations>netcoreapp-Debug;netcoreapp-Release;netstandard-Debug;netstandard-Release;uap-Debug;uap-Release</Configurations>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(CommonTestPath)\System\Collections\DictionaryExtensions.cs" Condition="'$(TargetGroup)'!='netcoreapp' And '$(TargetGroup)'!='uap'">
+    <Compile Include="$(CommonTestPath)\System\Collections\DictionaryExtensions.cs" Condition="'$(TargetsNetCoreApp)' != 'true' and '$(TargetsUap)' != 'true'">
       <Link>Common\System\Collections\DictionaryExtensions.cs</Link>
     </Compile>
     <Compile Include="BadHasher.cs" />
@@ -96,7 +96,7 @@
     <None Include="ClassDiagram1.cd" />
     <Compile Include="ImmutableArray\ImmutableArray.Generic.Tests.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'netstandard'">
+  <ItemGroup Condition="'$(TargetsNetStandard)' != 'true'">
     <!-- Some internal types are needed, so we reference the implementation assembly, rather than the reference assembly. -->
     <DefaultReferenceExclusions Include="System.Collections.Immutable" />
     <ReferenceFromRuntime Include="System.Collections.Immutable" />

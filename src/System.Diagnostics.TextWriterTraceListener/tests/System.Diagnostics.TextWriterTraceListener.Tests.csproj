@@ -12,7 +12,7 @@
     <Compile Include="CtorsStreamTests.cs" />
     <Compile Include="DelimiterWriteMethodTests.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'netstandard'">
+  <ItemGroup Condition="'$(TargetsNetStandard)' != 'true'">
     <Compile Include="ConsoleTraceListenerTests.cs" />
     <Compile Include="XmlWriterTraceListenerTests.cs" />
   </ItemGroup>

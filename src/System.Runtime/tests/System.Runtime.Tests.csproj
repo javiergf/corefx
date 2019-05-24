@@ -233,7 +233,7 @@
   <ItemGroup Condition=" '$(TargetsUnix)' == 'true'">
     <Compile Include="System\ExitCodeTests.Unix.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'netfx' And '$(TargetGroup)' != 'netstandard'">
+  <ItemGroup Condition="'$(TargetsNetFx)' != 'true' And '$(TargetsNetStandard)' != 'true'">
     <Compile Include="System\Collections\ObjectModel\CollectionTests.netcoreapp.cs" />
     <Compile Include="System\HashCodeTests.netcoreapp.cs" />
     <Compile Include="Helpers.netcoreapp.cs" />
@@ -272,7 +272,7 @@
     <Compile Include="System\ComponentModel\DefaultValueAttributeTests.netcoreapp.cs" />
     <Compile Include="System\Reflection\BindingFlagsDoNotWrap.netcoreapp.cs" />
     <Compile Include="System\Reflection\InvokeRefReturn.netcoreapp.cs" />
-    <Compile Include="System\Reflection\IsCollectibleTests.cs" Condition="'$(TargetGroup)' != 'uapaot'" />
+    <Compile Include="System\Reflection\IsCollectibleTests.cs" Condition="'$(TargetsUap)' != 'true' or '$(TargetsAot)' != 'true'" />
     <!-- missing method 'AssemblyLoadContext..ctor(bool) -->
     <Compile Include="System\Reflection\MethodBaseTests.netcoreapp.cs" />
     <Compile Include="System\Reflection\SignatureTypes.netcoreapp.cs" />
@@ -304,10 +304,10 @@
     <Compile Include="$(CommonPath)\..\tests\System\RealParserTestsBase.netcoreapp.cs" Link="System\RealParserTestsBase.netcoreapp.cs" />
     <Compile Include="System\RealParserTests.netcoreapp.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'netcoreapp'">
+  <ItemGroup Condition="'$(TargetsNetCoreApp)' != 'true'">
     <Compile Include="System\StringSplitExtensions.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)' == 'netfx' Or '$(TargetGroup)' == 'netstandard'">
+  <ItemGroup Condition="'$(TargetsNetFx)' == 'true' or '$(TargetsNetStandard)' == 'true'">
     <Compile Include="$(CommonTestPath)\Tests\System\SpanExtensions.netstandard.cs">
       <Link>System\SpanExtensions.netstandard.cs</Link>
     </Compile>

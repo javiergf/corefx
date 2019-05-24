@@ -33,11 +33,11 @@
     <Compile Include="SerializationTestTypes\SampleTypes.cs" />
     <Compile Include="SerializationTestTypes\SelfRefAndCycles.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'uapaot'">
+  <ItemGroup Condition="'$(TargetsUap)' != 'true' or '$(TargetsAot)' != 'true'">
     <Compile Include="$(TestSourceFolder)SerializationTypes.CoreCLR.cs" />
     <Compile Include="$(TestSourceFolder)DataContractSerializer.CoreCLR.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)'=='uapaot'">
+  <ItemGroup Condition="'$(TargetsUap)' == 'true' and '$(TargetsAot)' == 'true'">
     <EmbeddedResource Include="$(MsBuildThisFileDirectory)Resources\$(AssemblyName).rd.xml" />
   </ItemGroup>
 </Project>

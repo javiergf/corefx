@@ -12,7 +12,7 @@
     <Compile Include="ThreadExceptionEventArgsTests.cs" />
     <Compile Include="ThreadTests.cs" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetGroup)' != 'netstandard'">
+  <ItemGroup Condition="'$(TargetsNetStandard)' != 'true'">
     <Compile Include="ThreadTests.netcoreapp.cs" />
   </ItemGroup>
   <ItemGroup>
